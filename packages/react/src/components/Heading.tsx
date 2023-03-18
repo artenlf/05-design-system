@@ -14,9 +14,9 @@ export const Heading = styled('h2', {
       lg: { fontSize: '4xl' },
       xl: { fontSize: '5xl' },
       '2xl': { fontSize: '6xl' },
-      '4xl': { fontSize: '7xl' },
-      '5xl': { fontSize: '8xl' },
-      '6xl': { fontSize: '9xl' },
+      '3xl': { fontSize: '7xl' },
+      '4xl': { fontSize: '8xl' },
+      '5xl': { fontSize: '9xl' },
     },
   },
 
@@ -28,3 +28,5 @@ export const Heading = styled('h2', {
 export interface HeadingProps extends ComponentProps<typeof Heading> {
   as?: ElementType
 }
+
+Heading.displayName = 'Heading'
