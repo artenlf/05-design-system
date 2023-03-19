@@ -1,12 +1,12 @@
 import {
-  colors,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  radii,
-  space,
-} from '@ignite-ui/tokens'
+    colors,
+    fonts,
+    fontSizes,
+    fontWeights,
+    lineHeights,
+    radii,
+    space
+} from '@artenlf-ignite-ui/tokens'
 
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
