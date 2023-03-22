@@ -6,7 +6,25 @@ export default {
   component: TooltipComponent,
 
   args: {
-    children: 'Test tooltip text',
+    triggerProps: {
+      variant: 'available',
+    },
+    children: '23',
+    contentProps: {
+      message: 'October 23 - Avaible',
+    },
+  },
+  argTypes: {
+    triggerProps: {
+      table: {
+        disable: true,
+      },
+    },
+    contentProps: {
+      table: {
+        disable: true,
+      },
+    },
   },
   decorators: [
     (Story) => {
@@ -15,7 +33,7 @@ export default {
           css={{
             display: 'flex',
             flexDirection: 'row',
-            padding: '$8',
+            padding: '$16',
             alignItems: 'center',
           }}
         >
@@ -26,14 +44,16 @@ export default {
   ],
 } as Meta<TooltipProps>
 
-export const Avaible: StoryObj<TooltipProps> = {
-  args: {
-    children: 'October 23 - Avaible',
-  },
-}
+export const Available: StoryObj<TooltipProps> = {}
 
-export const Unavaible: StoryObj<TooltipProps> = {
+export const Unavailable: StoryObj<TooltipProps> = {
   args: {
-    children: 'October 27 - Unavaible',
+    triggerProps: {
+      variant: 'unavailable',
+    },
+    children: '23',
+    contentProps: {
+      message: 'October 23 - Unavailable',
+    },
   },
 }
