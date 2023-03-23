@@ -4,8 +4,6 @@ import { Meta, StoryObj } from '@storybook/react'
 export default {
   title: 'Form/Toast',
   component: ToastComponent,
-
-  args: {},
   decorators: [
     (Story) => {
       return (
