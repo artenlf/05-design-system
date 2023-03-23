@@ -34,7 +34,7 @@ export function ToastComponent() {
           setToastOpen(true)
         }}
       >
-        {new Date().getDate()}
+        {date.getDate()}
       </CalendarDateButton>
 
       <ToastRoot open={toastOpen} onOpenChange={setToastOpen}>

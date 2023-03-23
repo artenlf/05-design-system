@@ -13,12 +13,22 @@ import {
 
 interface TooltipContentProps
   extends ComponentProps<typeof TooltipContentContainer> {
-  message?: string
+  isDateAvailable: boolean
 }
 
 export interface TooltipProps extends ComponentProps<typeof TooltipContainer> {
   calendarDateProps: CalendarDateButtonProps
   contentProps: TooltipContentProps
+}
+const date = new Date()
+const currentDate = new Date(date)
+const inAWeekDate = currentDate.setDate(currentDate.getDate() + 7)
+
+function dateFormatted(date: number) {
+  return new Intl.DateTimeFormat('en-US', {
+    day: '2-digit',
+    month: 'long',
+  }).format(date)
 }
 
 export function TooltipComponent(props: TooltipProps) {
@@ -27,21 +37,27 @@ export function TooltipComponent(props: TooltipProps) {
       <TooltipContainer {...props}>
         <TooltipTrigger>
           <CalendarDateButton variant={props.calendarDateProps.variant}>
-            {new Date().getDate()}
+            {date.getDate()}
           </CalendarDateButton>
         </TooltipTrigger>
         <Tooltip.Portal>
-          <TooltipContent message={props.contentProps.message} />
+          <TooltipContent
+            isDateAvailable={props.calendarDateProps.variant === 'available'}
+          />
         </Tooltip.Portal>
       </TooltipContainer>
     </Tooltip.Provider>
   )
 }
 
-function TooltipContent({ message }: TooltipContentProps) {
+function TooltipContent({ isDateAvailable }: TooltipContentProps) {
   return (
     <TooltipContentContainer>
-      {message}
+      <time dateTime={inAWeekDate.toString()}>
+        {`${dateFormatted(inAWeekDate)} - ${
+          isDateAvailable ? 'available' : 'not available'
+        }`}
+      </time>
       <TooltipArrow />
     </TooltipContentContainer>
   )

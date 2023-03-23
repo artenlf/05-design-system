@@ -9,22 +9,6 @@ export default {
     calendarDateProps: {
       variant: 'available',
     },
-    children: '23',
-    contentProps: {
-      message: 'October 23 - Avaible',
-    },
-  },
-  argTypes: {
-    calendarDateProps: {
-      table: {
-        disable: true,
-      },
-    },
-    contentProps: {
-      table: {
-        disable: true,
-      },
-    },
   },
   decorators: [
     (Story) => {
@@ -50,10 +34,6 @@ export const Unavailable: StoryObj<TooltipProps> = {
   args: {
     calendarDateProps: {
       variant: 'unavailable',
-    },
-    children: '23',
-    contentProps: {
-      message: 'October 23 - Unavailable',
     },
   },
 }
