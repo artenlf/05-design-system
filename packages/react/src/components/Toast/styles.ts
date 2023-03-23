@@ -91,32 +91,3 @@ export const ToastClose = styled(Toast.Close, {
     color: '$gray200',
   },
 })
-
-export const CalendarDateButton = styled('button', {
-  all: 'unset',
-  padding: '$4 $6',
-  borderRadius: '$sm',
-  color: '$white',
-  fontFamily: '$default',
-  lineHeight: '$base',
-
-  display: 'flex',
-  justifyContent: 'center',
-  alignContent: 'center',
-
-  variants: {
-    variant: {
-      available: {
-        backgroundColor: '$gray800',
-      },
-
-      unavailable: {
-        backgroundColor: 'transparent',
-      },
-    },
-  },
-
-  defaultVariants: {
-    variant: 'available',
-  },
-})

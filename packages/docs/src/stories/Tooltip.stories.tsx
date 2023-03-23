@@ -6,7 +6,7 @@ export default {
   component: TooltipComponent,
 
   args: {
-    triggerProps: {
+    calendarDateProps: {
       variant: 'available',
     },
     children: '23',
@@ -15,7 +15,7 @@ export default {
     },
   },
   argTypes: {
-    triggerProps: {
+    calendarDateProps: {
       table: {
         disable: true,
       },
@@ -48,7 +48,7 @@ export const Available: StoryObj<TooltipProps> = {}
 
 export const Unavailable: StoryObj<TooltipProps> = {
   args: {
-    triggerProps: {
+    calendarDateProps: {
       variant: 'unavailable',
     },
     children: '23',

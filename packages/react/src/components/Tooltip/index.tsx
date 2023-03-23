@@ -1,13 +1,15 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
 import { ComponentProps } from 'react'
 import {
+  CalendarDateButton,
+  CalendarDateButtonProps,
+} from '../CalendarDateButton'
+import {
   TooltipArrow,
   TooltipContainer,
   TooltipContentContainer,
   TooltipTrigger,
 } from './styles'
-
-interface TooltipTriggerProps extends ComponentProps<typeof TooltipTrigger> {}
 
 interface TooltipContentProps
   extends ComponentProps<typeof TooltipContentContainer> {
@@ -15,7 +17,7 @@ interface TooltipContentProps
 }
 
 export interface TooltipProps extends ComponentProps<typeof TooltipContainer> {
-  triggerProps: TooltipTriggerProps
+  calendarDateProps: CalendarDateButtonProps
   contentProps: TooltipContentProps
 }
 
@@ -23,8 +25,10 @@ export function TooltipComponent(props: TooltipProps) {
   return (
     <Tooltip.Provider>
       <TooltipContainer {...props}>
-        <TooltipTrigger variant={props.triggerProps.variant}>
-          {props.children}
+        <TooltipTrigger>
+          <CalendarDateButton variant={props.calendarDateProps.variant}>
+            {new Date().getDate()}
+          </CalendarDateButton>
         </TooltipTrigger>
         <Tooltip.Portal>
           <TooltipContent message={props.contentProps.message} />

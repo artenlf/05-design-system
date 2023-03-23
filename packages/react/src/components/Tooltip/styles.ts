@@ -12,31 +12,6 @@ export const TooltipContainer = styled(Tooltip.Root, {
 
 export const TooltipTrigger = styled(Tooltip.Trigger, {
   all: 'unset',
-  padding: '$4 $6',
-  borderRadius: '$sm',
-  color: '$white',
-  fontFamily: '$default',
-  lineHeight: '$base',
-
-  display: 'flex',
-  justifyContent: 'center',
-  alignContent: 'center',
-
-  variants: {
-    variant: {
-      available: {
-        backgroundColor: '$gray600',
-      },
-
-      unavailable: {
-        backgroundColor: 'transparent',
-      },
-    },
-  },
-
-  defaultVariants: {
-    variant: 'available',
-  },
 })
 
 export const TooltipContentContainer = styled(Tooltip.Content, {
