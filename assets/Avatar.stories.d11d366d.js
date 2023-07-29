@@ -1,0 +1,2 @@
+import{A as t}from"./index.fcd133d8.js";import"./index.40a979e9.js";import"./iframe.9ea36df7.js";import"./index.6101fb72.js";import"./jsx-runtime.7ce0864f.js";const p={title:"Data display/Avatar",component:t,args:{src:"https://github.com/artenlf.png",alt:"artenlf"},argTypes:{src:{control:{type:"text"}}}},c={},e={args:{src:void 0}},l=["Primary","WithFallback"];export{c as Primary,e as WithFallback,l as __namedExportsOrder,p as default};
+//# sourceMappingURL=Avatar.stories.d11d366d.js.map
