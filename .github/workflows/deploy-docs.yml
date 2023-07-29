@@ -16,13 +16,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+        env:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
       - run: npm ci
       - run: npm run build
         env:
-           TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           TURBO_TEAM: artenlf
 
       - name: Deploy storybook
