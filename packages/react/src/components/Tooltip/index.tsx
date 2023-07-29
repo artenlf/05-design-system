@@ -62,6 +62,3 @@ function TooltipContent({ isDateAvailable }: TooltipContentProps) {
     </TooltipContentContainer>
   )
 }
-
-TooltipComponent.displayName = 'Tooltip'
-TooltipContent.displayName = 'TooltipContent'

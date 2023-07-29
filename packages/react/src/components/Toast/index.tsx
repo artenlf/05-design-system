@@ -12,7 +12,7 @@ import {
 
 export interface ToastProps extends ComponentProps<typeof ToastRoot> {}
 
-export function ToastComponent(props: ToastProps) {
+export function ToastComponent() {
   const [toastOpen, setToastOpen] = useState(false)
   const date = new Date()
   const currentDate = new Date(date)
@@ -37,7 +37,7 @@ export function ToastComponent(props: ToastProps) {
         {date.getDate()}
       </CalendarDateButton>
 
-      <ToastRoot {...props} open={toastOpen} onOpenChange={setToastOpen}>
+      <ToastRoot open={toastOpen} onOpenChange={setToastOpen}>
         <ToastTitle>Appointment scheduled</ToastTitle>
         <ToastDescription asChild>
           <time dateTime={inAWeekDate.toString()}>
@@ -52,5 +52,3 @@ export function ToastComponent(props: ToastProps) {
     </Toast.Provider>
   )
 }
-
-ToastComponent.displayName = 'Toast'

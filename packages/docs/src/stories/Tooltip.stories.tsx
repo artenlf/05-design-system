@@ -10,11 +10,6 @@ export default {
       variant: 'available',
     },
   },
-  argTypes: {
-    calendarDateProps: {
-      control: false,
-    },
-  },
   decorators: [
     (Story) => {
       return (
